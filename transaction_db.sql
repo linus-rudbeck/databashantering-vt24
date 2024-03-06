@@ -15,3 +15,20 @@ CREATE TABLE accounts (
     balance INT UNSIGNED DEFAULT 0,
     FOREIGN KEY (person_id) REFERENCES persons(person_id)
 );
+
+
+INSERT INTO persons (full_name, address) 
+	VALUES ("Linus", "Sagogatan"), ("Anna", "Drömstigen");
+
+
+SELECT * FROM persons;
+
+INSERT INTO accounts (person_id, account_number)
+	VALUES (1, "1337"),  (1, "0042");
+    
+SELECT * FROM accounts;
+
+UPDATE accounts SET balance=balance+1000000 WHERE account_id=1;
+UPDATE accounts SET balance=balance-1000000 WHERE account_id=2;
+
+UPDATE accounts SET balance=0 WHERE account_id=1 OR account_id=2;
