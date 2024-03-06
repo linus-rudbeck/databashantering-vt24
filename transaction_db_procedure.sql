@@ -1,6 +1,6 @@
 DELIMITER $$
 
-CREATE PROCEDURE UpdateAccountBalances(IN accountId1 INT, IN accountId2 INT, IN balanceToTransfer INT)
+CREATE PROCEDURE TransferMoney(IN fromAccountId INT, IN toAccountId INT, IN balanceToTransfer INT)
 BEGIN
     DECLARE exit handler for sqlexception
     BEGIN
